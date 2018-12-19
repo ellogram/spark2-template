@@ -1,6 +1,5 @@
 package sql_practice
 
-import org.apache.spark.sql.functions.sum
 import spark_helpers.SessionBuilder
 
 object exe2 {
@@ -10,13 +9,13 @@ object exe2 {
 
     val s7DF = spark.read
       .option("sep", "\t")
-      .csv("/home/formation/big_data/Spark/data/sample_07")
+      .csv("data/input/sample_07")
       .select($"_c0".as("Code"), $"_c1".as("Description"),
         $"_c2".as("Total_emp"), $"_c3".as("Salary"))
 
     val s8DF = spark.read
       .option("sep", "\t")
-      .csv("/home/formation/big_data/Spark/data/sample_08")
+      .csv("data/input/sample_08")
       .select($"_c0".as("Code"), $"_c1".as("Description"),
         $"_c2".as("Total_emp"), $"_c3".as("Salary"))
 
